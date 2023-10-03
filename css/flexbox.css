@@ -1,0 +1,114 @@
+.headerPrincipal .container{
+    display: flex;                  /* iniciamos con la creacion de la flexbox   */
+    align-items: center;            /* ordenamos los items en el centro del contenedor */
+    justify-content: space-between; /* justificacion del contenido, teniendo un espacio entre ellos (UNO ESTA HASTA EL LADO IZQUIEDO Y EL OTRO HASTA EL LADO DERECHO) */
+}
+    
+.headerPrincipal-nav{
+    display: flex;                  /*creamos la flexbox para ordenarlo de manera horizontal */
+}
+
+.rodapePrincipal-patrocinadores .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;                  
+    align-items: center;            
+    justify-content: space-around;      /*en vez de poner el espacio en medio, lo colocamos alrededor del mismo*/
+    width: 70%;                         /*ancho para abarcar mas en el div y tener los logos en el centro*/
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    flex-direction: column;         /*Acomodar en columnas la informacion*/
+    height: 250px;                  /*Cada 250px */
+    flex-wrap: wrap;                /*y despues de esa cantidad de pixeles, cortar para ir a la siguiente columna*/
+}
+
+.contenidoPrincipal-cursos {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.contenidoPrincipal-cursos-link {
+    display: flex;
+    width: 23%;
+}
+
+.videoSobre .container{
+    display: flex;
+}
+.videoSobre-sobre{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.videoSobre-video{
+    flex-grow: 2;                   /*dividiendo los elementos en el contenedor, a este se le daran 2 espacios mas que los demas*/
+    flex-shrink: 2;                 /*Si disminuye la pantalla, de igual manera este item*/
+}
+.videoSobre-sobre-list{
+    flex-grow: 2;
+}
+
+/* Responsive */
+@media(max-width:768px){            /*Aqui es donde comienza la parte responsiva, si es mayor a este ancho, cambian los valores*/
+    .headerPrincipal .container{
+        flex-direction: column;
+        align-items: initial;           /*Inicializa los items desde la parte izquierda de arriba*/
+        text-align: center;
+    }
+    .headerPrincipal-nav{
+        flex-direction: column;         /*Se inicializa como una columna para los dispositivos celulares */
+    }
+
+    .contenidoPrincipal-cursos{
+        flex-direction: column;
+    }
+
+    .contenidoPrincipal-cursos-link{
+        width: 100%;
+    }
+
+    .rodapePrincipal-navMap-list{
+        height: auto;                   /*La altura sera automatica para abarcar todos los elementos*/
+        flex-wrap: nowrap;              /*Evitamos el wrap para que no se corte */
+    }
+
+    .rodapePrincipal-patrocinadores .container{
+        flex-direction: column;
+    }
+
+    .rodapePrincipal-contatoForm{
+        width: 100%;
+    }
+
+    .rodapePrincipal-patrocinadores-list{
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .rodapePrincipal-contatoForm-fieldset{
+        justify-content: center;
+    }
+
+    .headerPrincipal-nav-link-app{
+        order:-2;                                   /*El orden de donde aparece las opciones cambia, ahora al comenzar este item en -1*/
+    }
+
+    .videoSobre .container{
+        flex-direction: column;
+    }
+}
